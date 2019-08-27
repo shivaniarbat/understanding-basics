@@ -29,3 +29,11 @@ print(vectors[:,1] * values[1])
 # third 
 print(A.dot(vectors[:,2]))
 print(vectors[:,2] * values[2])
+
+# reconstruct the original matrix 
+Q = vectors
+R = np.linalg.inv(Q)
+L = np.diag(values)
+
+A_old = Q.dot(L).dot(R)
+print(A_old)
